@@ -34,6 +34,7 @@ public class AuthJWTController {
 	
 	@RequestMapping(path = "/login",method = RequestMethod.POST)
 	public String login(@RequestBody UserDTO dto) {
+		System.out.println("Login Request received.....");
 		UsernamePasswordAuthenticationToken authenticationToken =
 	            new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword());
 		 Authentication authentication = ApplicationContextHolder.getContext().getBean(AuthenticationManager.class).authenticate(authenticationToken);
