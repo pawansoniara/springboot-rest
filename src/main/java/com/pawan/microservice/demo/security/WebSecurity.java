@@ -34,7 +34,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         this.tokenProvider = tokenProvider;
         this.authenticationManagerBuilder = authenticationManagerBuilder;
         
-     //   System.out.println(bCryptPasswordEncoder.encode("test"));
     }
     
     @PostConstruct
