@@ -29,7 +29,7 @@ import io.jsonwebtoken.UnsupportedJwtException;
 public class TokenProvider {
 	private static Logger log=Logger.getLogger(TokenProvider.class.getName());
 	
-	 private final String TOKEN_SECRET="h4of9eh48vmg02nfu30v27yen295hfj65";
+	 private final String TOKEN_SECRET="h4of9eh48vmg02nfu30v27yen295hf5AA";
 	 
 	 public boolean validateToken(String authToken) {
 	        try {
