@@ -13,6 +13,7 @@ import com.pawan.microservice.demo.config.ApplicationContextHolder;
 import com.pawan.microservice.demo.rest.dto.UserDTO;
 import com.pawan.microservice.demo.security.CustomeUserdetails;
 import com.pawan.microservice.demo.security.TokenProvider;
+import com.pawan.microservice.demo.service.UserService;
 
 @RestController
 @RequestMapping("/api")
@@ -21,10 +22,13 @@ public class AuthJWTController {
 
 	private final TokenProvider tokenProvider;
 	
+	private final UserService userService;
+	
 
 	
-	public AuthJWTController(TokenProvider tokenProvider) {
-		this.tokenProvider=tokenProvider;
+	public AuthJWTController(TokenProvider tokenProvider,UserService userService) {
+		this.tokenProvider = tokenProvider;
+		this.userService = userService;
 	}
 	
 	
@@ -46,6 +50,12 @@ public class AuthJWTController {
 		CustomeUserdetails customeUserdetails= (CustomeUserdetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		dto.setUsername(customeUserdetails.getUsername());
 		return dto;
+		
+	}
+	
+	@RequestMapping(path = "/account",method = RequestMethod.PUT)
+	public void accountUpdate(@RequestBody UserDTO dto) {
+		userService.updateUser(dto);
 		
 	}
 	

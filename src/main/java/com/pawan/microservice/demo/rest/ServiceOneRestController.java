@@ -17,7 +17,6 @@ public class ServiceOneRestController {
 	@RequestMapping(value = "/ping",method = RequestMethod.GET)
 	public ResponseEntity<?> ping() throws InterruptedException{
 		log.info("called ping");
-//		Thread.sleep(2000);
 		log.info("finish ping");
 		return new ResponseEntity<>("OK",HttpStatus.OK);
 	}
