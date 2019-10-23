@@ -9,6 +9,19 @@ public class CustomerDTO {
 	private boolean accountNonLocked;
 	private boolean credentialsNonExpired;
 	
+	
+	
+	public CustomerDTO(String username, String password, boolean accountNonExpired, boolean enabled,
+			boolean accountNonLocked, boolean credentialsNonExpired) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.accountNonExpired = accountNonExpired;
+		this.enabled = enabled;
+		this.accountNonLocked = accountNonLocked;
+		this.credentialsNonExpired = credentialsNonExpired;
+	}
+	
 	public String getUsername() {
 		return username;
 	}
